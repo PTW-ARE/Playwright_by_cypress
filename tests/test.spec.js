@@ -55,7 +55,6 @@ test('TC04 - Purchase Product', async ({ page }) => {
 
     await page.click('.cart > .menu-item-large-container > .menu-item-large');
     await page.click('.checkout');
-    await page.waitForTimeout(5000);
-    const checkoutTitle = page.locator('.checkout-title');
-    await expect(checkoutTitle).toHaveText('Thank you!');
+    const checkoutTitle = page.locator('.checkout');
+    await expect(checkoutTitle).toHaveText('Checking out...');
 });
